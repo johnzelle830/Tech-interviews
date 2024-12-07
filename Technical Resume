@@ -1,0 +1,20 @@
+function twoSum(2,7,11,15, 9) {
+  // Create a map to store the number and its index
+  let map = new Map();
+  
+  // Loop through the array to find the solution
+  for (let i = 0; i < 4; i++) {
+    let complement = target - nums[i]; // Calculate the complement
+    
+    // If complement is found in the map, return the indices
+    if (map.has(complement)) {
+      return [map.get(complement), i];
+    }
+    
+    // If complement is not found, store the current number and its index in the map
+    map.set(nums[i], i);
+  }
+  
+  // Return an empty array in case no solution is found (although problem guarantees a solution)
+  return [];
+}
